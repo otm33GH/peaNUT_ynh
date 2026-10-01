@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+A tiny dashboard for Network UPS Tools.
