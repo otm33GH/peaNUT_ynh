@@ -17,9 +17,9 @@ ynh_app_setting_set --key=auth_secret --value=$auth_secret
 # INSTALL DEPS 
 #=================================================
 
-#npm install --global corepack@latest
-#corepack enable pnpm
-#corepack use pnpm@latest
+npm install --global corepack@latest
+corepack enable pnpm
+corepack use pnpm@10.25.0
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -42,10 +42,6 @@ ynh_script_progression "Adding $app's configuration files..."
 #=================================================
 
 pushd $install_dir
-#test 
-ynh_exec_as_app npm install --global corepack@latest
-ynh_exec_as_app corepack enable pnpm
-
 ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
 
