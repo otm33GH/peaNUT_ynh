@@ -40,7 +40,7 @@ ram.runtime = "50M"
 
     [install.init_main_permission]
     type = "group"
-    default = "all_users"
+    default = "admins"
 
     [install.admin]
     type = "user"
@@ -67,7 +67,7 @@ ram.runtime = "50M"
     ask.en = "NUT server port"
     ask.fr = "Port du serveur NUT"
     type = "number"
-    default = "3493"
+    default = 3493
     
     [install.nut_username]
     ask.en = "NUT Server username"
