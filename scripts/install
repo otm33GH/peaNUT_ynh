@@ -13,6 +13,14 @@ source /usr/share/yunohost/helpers
 auth_secret=$(ynh_string_random --length=32)
 ynh_app_setting_set --key=auth_secret --value=$auth_secret
 
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression "Setting up source files..."
+
+    ynh_setup_source --dest_dir="$install_dir"
+
 #=================================================
 # INSTALL DEPS 
 #=================================================
@@ -21,13 +29,6 @@ PNPM_VERSION=$(sed -n 's/.*"packageManager":\s*"pnpm@\([^"]*\)".*/\1/p' $install
 npm install --global corepack@latest
 corepack enable pnpm
 corepack use pnpm@${PNPM_VERSION}
-
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression "Setting up source files..."
-
-    ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
 # APP INITIAL CONFIGURATION
