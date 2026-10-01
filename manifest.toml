@@ -68,6 +68,8 @@ ram.runtime = "50M"
     ask.fr = "Port du serveur NUT"
     type = "number"
     default = 3493
+    min = 0
+    max = 65535
     
     [install.nut_username]
     ask.en = "NUT Server username"
