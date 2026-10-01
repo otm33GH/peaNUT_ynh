@@ -14,6 +14,14 @@ auth_secret=$(ynh_string_random --length=32)
 ynh_app_setting_set --key=auth_secret --value=$auth_secret
 
 #=================================================
+# INSTALL DEPS 
+#=================================================
+
+npm install --global corepack@latest
+corepack enable pnpm
+#corepack use pnpm@latest
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -30,12 +38,8 @@ ynh_script_progression "Adding $app's configuration files..."
 
 
 #=================================================
-# INSTALL DEPS AND BUILD THE APP
+# BUILD THE APP
 #=================================================
-
-npm install --global corepack@latest
-corepack enable pnpm
-#corepack use pnpm@latest
 
 pushd $install_dir
 ynh_script_progression "Installing the $app..."
