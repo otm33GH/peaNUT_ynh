@@ -11,4 +11,4 @@ NUT_SERVERS:
     PASSWORD: password
 etc.
 ```
-
+Then restart the PeaNUT Dashboard service.
