@@ -1,3 +1,14 @@
-Ceci est une fausse doc d'admin pour cette app
-
-Le dossier d'install de l'app est `__INSTALL_DIR__`
+D'autres serveurs NUT peuvent être ajoutés en éditant __INSTALL_DIR__/settings.yml:  
+```
+NUT_SERVERS:
+  - HOST: host
+    PORT: port
+    USERNAME: username
+    PASSWORD: password
+  - HOST: host
+    PORT: port
+    USERNAME: username
+    PASSWORD: password
+etc.
+```  
+Le service PeaNUT Dashboard doit ensuite être relancé.
