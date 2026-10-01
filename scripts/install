@@ -49,6 +49,7 @@ ynh_script_progression "Building the $app..."
 ynh_script_progression "Adding system configurations related to $app..."
 
     ynh_config_add_systemd
+    yunohost service add $app --description="PeaNUT Dashboard" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
