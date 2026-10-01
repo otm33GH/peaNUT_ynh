@@ -38,7 +38,7 @@ ynh_script_progression "Adding $app's configuration files..."
 
 
 #=================================================
-# BUILD THE APP
+# INSTALL AND BUILD THE APP
 #=================================================
 
 pushd $install_dir
