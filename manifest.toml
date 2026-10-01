@@ -42,6 +42,36 @@ ram.runtime = "50M"
     type = "group"
     default = "all_users"
 
+    [install.admin]
+    type = "user"
+    help.en = "Admin user (must be member of the admins group)"
+    help.fr = "Compte administrateur (doit être membre du groupe admins)"
+    
+    [install.password]
+    help.en = "Choose admin user password"
+    help.fr = "Choisissez le mot de passe du compte d'administration"
+    type = "password"
+   
+    [install.auth_disabled]
+    ask.en = "Disabled authentication"
+    ask.fr = "Enable authentication"
+    type = "boolean"
+    default = true
+
+    [install.nut_host]
+    ask.en = "First NUT Server host"
+    ask.fr = "Hôte du premier serveur NUT"
+    type = "string"
+    [install.nut_username]
+    ask.en = "NUT Server username"
+    ask.fr = "Utilisateur du serveur NUT"
+    type = "string"
+    
+    [install.nut_password]
+    ask.en = "NUT Server password"
+    ask.fr = "Mot de passe du serveur NUT"
+    type = "password"
+        
 [resources]
 
     [resources.sources]
