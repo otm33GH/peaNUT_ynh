@@ -15,6 +15,14 @@ ynh_script_progression "Stopping $app's systemd service..."
     ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
+# INSTALL DEPS
+#=================================================
+
+npm install --global corepack@latest
+corepack enable pnpm
+#corepack use pnpm@latest
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
@@ -41,12 +49,8 @@ ynh_script_progression "Upgrading system configurations related to $app..."
     ynh_config_add_logrotate
 
 #=================================================
-# INSTALL DEPS AND BUILD THE APP
+# INSTALL AND BUILD THE APP
 #=================================================
-
-npm install --global corepack@latest
-corepack enable pnpm
-#corepack use pnpm@latest
 
 pushd $install_dir
 ynh_script_progression "Installing the $app..."
