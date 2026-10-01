@@ -35,7 +35,7 @@ ynh_script_progression "Adding $app's configuration files..."
 
 npm install --global corepack@latest
 corepack enable pnpm
-corepack use pnpm@latest
+#corepack use pnpm@latest
 
 ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install 
