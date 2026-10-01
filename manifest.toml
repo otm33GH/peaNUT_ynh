@@ -62,6 +62,12 @@ ram.runtime = "50M"
     ask.en = "First NUT Server host"
     ask.fr = "Hôte du premier serveur NUT"
     type = "string"
+
+    [install.nut_port]
+    ask.en = "NUT server port"
+    ask.fr = "Port du serveur NUT"
+    type = "number"
+    default = "3493"
     
     [install.nut_username]
     ask.en = "NUT Server username"
