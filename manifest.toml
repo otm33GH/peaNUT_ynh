@@ -2,22 +2,20 @@
 
 packaging_format = 2
 
-id = "keycloakify"
-name = "Keycloakify"
-description.en = "Keycloak theming for the modern web"
-description.fr = "Créateur de thèmes pour Keycloak"
+id = "peanut"
+name = "PeaNUT"
+description.en = "A tiny dashboard for Network UPS Tools"
+description.fr = "Tableau de bord de gestion d'onduleurs"
 
-version = "11.16.0~ynh1"
+version = "6.0.0~ynh1"
 
 maintainers = ["otm33GH"]
 
 [upstream]
-license = "MIT" 
-website = "https://www.keycloakify.dev/"
-demo = "https://storybook.keycloakify.dev/?path=/story/introduction--what-is-this-website"
-admindoc = "https://docs.keycloakify.dev/"
-userdoc = "https://docs.keycloakify.dev/"
-code = "https://github.com/keycloakify/keycloakify"
+license = "Apache-2.0"
+admindoc = "https://github.com/Brandawg93/PeaNUT/wiki"
+userdoc = "https://github.com/Brandawg93/PeaNUT/wiki"
+code = "https://github.com/Brandawg93/PeaNUT"
 
 [integration]
 yunohost = ">= 12.1.40"
@@ -38,23 +36,19 @@ ram.runtime = "50M"
 
     [install.path]
     type = "path"
-    default = "/keycloakify"
+    default = "/peanut"
 
     [install.init_main_permission]
-    # this is a generic question - ask strings are automatically handled by YunoHost's core
-    # This won't be saved as setting and will instead be used to initialize the SSOwat permission
     type = "group"
-    default = "visitors"
-
-
+    default = "all_users"
 
 [resources]
 
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/keycloakify/keycloakify/archive/refs/tags/v11.16.0.tar.gz"
-    sha256 = "014fd68e0fd068f2076a486cfbe18179ec509ada027eb5926f009131e72b0b5e"
+    url = "https://github.com/Brandawg93/PeaNUT/archive/refs/tags/v6.0.0.tar.gz"
+    sha256 = "262c799bc41723191797175c469c872af3f96e9e9989220559712407d8b43a0b"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
@@ -64,8 +58,10 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    main.allowed = "admins"
 
     [resources.ports]
+    main.default = 8080
 
     [resources.apt]
 
