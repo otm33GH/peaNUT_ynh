@@ -25,10 +25,9 @@ ynh_script_progression "Setting up source files..."
 # INSTALL DEPS 
 #=================================================
 
-PNPM_VERSION=$(sed -n 's/.*"packageManager":\s*"pnpm@\([^"]*\)".*/\1/p' $install_dir/package.json)
 npm install --global corepack@latest
 corepack enable pnpm
-corepack use pnpm@${PNPM_VERSION}
+ynh_exec_as_app corepack use pnpm@10.25.0
 
 #=================================================
 # APP INITIAL CONFIGURATION
