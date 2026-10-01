@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Tableau de bord pour onduleurs gérés par un serveur NUT.
