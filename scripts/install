@@ -27,7 +27,6 @@ ynh_script_progression "Setting up source files..."
 ynh_script_progression "Adding $app's configuration files..."
 
     ynh_config_add --template=".env" --destination="$install_dir/.env"
-    ynh_config_add --template="settings.yml" --destination="$install_dir/.next/standalone/config/settings.yml"
 
 #=================================================
 # INSTALL AND BUILD THE APP
@@ -41,7 +40,8 @@ ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
 
 ynh_script_progression "Building the $app..."
-    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm run build:local
+    ynh_hide_warnings ynh_exec_as_app NODE_PTIONS="--max-old-space-size=4096" pnpm run build:local
+    ynh_config_add --template="settings.yml" --destination="$install_dir/.next/standalone/config/settings.yml"
 popd 
 
 #=================================================
