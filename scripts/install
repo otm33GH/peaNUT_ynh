@@ -35,7 +35,7 @@ ynh_script_progression "Adding $app's configuration files..."
 pushd $install_dir
 npm install --global corepack@latest
 corepack enable pnpm
-ynh_exec_as_app corepack use pnpm@latest
+ynh_exec_as_app corepack use pnpm@10.25.0
 ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
 
