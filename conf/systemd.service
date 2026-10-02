@@ -8,6 +8,7 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__
 Environment="PATH=__PATH_WITH_NODEJS__"
+Environment=__WEB_PORT__
 EnvironmentFile=__INSTALL_DIR__/.env
 ExecStart=__NODEJS_DIR__/node .next/standalone/server.js
 Restart=on-failure
