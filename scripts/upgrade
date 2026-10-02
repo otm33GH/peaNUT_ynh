@@ -19,7 +19,7 @@ ynh_script_progression "Stopping $app's systemd service..."
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-    ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep="settings.yml"
+    ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep=".next/standalone/config/settings.yml"
 
 #=================================================
 # UPDATE A CONFIG FILE
