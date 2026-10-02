@@ -9,7 +9,7 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__
 Environment="PATH=__PATH_WITH_NODEJS__"
 EnvironmentFile=__INSTALL_DIR__/.env
-ExecStart=__NODEJS_DIR__/pnpm run start:local
+ExecStart=__NODEJS_DIR__/node .next/standalone/server.js
 Restart=on-failure
 RestartSec=5
 StartLimitInterval=600s
