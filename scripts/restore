@@ -14,7 +14,7 @@ ynh_script_progression "Reinstall pnpm..."
     npm install --global corepack@latest
     corepack enable pnpm
 
-push "$install_dir"
+pushd "$install_dir"
     ynh_exec_as_app corepack use pnpm@10.25.0
 popd
 
