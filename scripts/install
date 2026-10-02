@@ -22,19 +22,12 @@ ynh_script_progression "Setting up source files..."
     ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
-# INSTALL DEPS 
-#=================================================
-
-
-
-#=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
 
     ynh_config_add --template=".env" --destination="$install_dir/.env"
     ynh_config_add --template="settings.yml" --destination="$install_dir/.next/standalone/config/settings.yml"
-
 
 #=================================================
 # INSTALL AND BUILD THE APP
@@ -43,7 +36,7 @@ ynh_script_progression "Adding $app's configuration files..."
 pushd $install_dir
 npm install --global corepack@latest
 corepack enable pnpm
-ynh_exec_as_app corepack use pnpm@10.25.0
+ynh_exec_as_app corepack use pnpm@latest
 ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
 
