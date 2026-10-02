@@ -12,6 +12,7 @@ source /usr/share/yunohost/helpers
 
 auth_secret=$(ynh_string_random --length=32)
 ynh_app_setting_set --key=auth_secret --value=$auth_secret
+hash_password=$(python3 -c "import bcrypt; print(bcrypt.hashpw(b\"$password\", bcrypt.gensalt(rounds=10)).decode())")
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -39,10 +40,10 @@ ynh_script_progression "Installing the $app..."
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm install --frozen-lockfile
 
 ynh_script_progression "Building the $app..."
-    ynh_hide_warnings ynh_exec_as_app NODE_PTIONS="--max-old-space-size=4096" pnpm run build:local
-    ynh_config_add --template="settings.yml" --destination="$install_dir/.next/standalon/config/settings.yml"
-    hash_password=$(bcrypt "$password")
-    ynh_config_add --template="auth.yaml" --destination="$install_dir/.next/standalon/config/auth.yml"
+    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm run build:local
+    ynh_config_add --template="settings.yml" --destination="$install_dir/.next/standalone/config/settings.yml"
+    ynh_config_add --template="auth.yaml" --destination="$install_dir/.next/standalone/config/auth.yaml"
+    ynh_exec_as_app pnpm store prune
 popd 
 
 #=================================================
