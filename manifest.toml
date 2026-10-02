@@ -97,7 +97,7 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-    main.allowed = "admins"
+    auth_header = false
 
     [resources.ports]
     main.default = 8080
