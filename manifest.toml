@@ -97,8 +97,8 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-    auth_header = false
-
+    mail.allowed = "admins"
+    
     [resources.ports]
     main.default = 8080
 
